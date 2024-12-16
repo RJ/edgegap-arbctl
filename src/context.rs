@@ -59,12 +59,15 @@ impl std::fmt::Display for OutputFormat {
 }
 
 fn edgegap_configuration() -> Configuration {
-    let key =
-        std::env::var("EDGEGAP_API_KEY").expect("EDGEGAP_API_KEY environment variable is not set");
+    // this can be set by cli option, so we don't fail if env is unset
+    let api_key = std::env::var("EDGEGAP_API_KEY")
+        .ok()
+        .map(|key| ApiKey { prefix: None, key });
+
     Configuration {
         base_path: "https://api.edgegap.com/".to_string(),
-        api_key: Some(ApiKey { prefix: None, key }),
-        user_agent: Some("arbctl".to_string()),
+        api_key,
+        user_agent: Some(format!("arbctl/{}", env!("CARGO_PKG_VERSION"))),
         ..Default::default()
     }
 }

@@ -50,7 +50,12 @@ impl Cmd for Arbctl {
                 prefix: None,
                 key: key.clone(),
             });
+        } else if ctx.api_config.api_key.is_none() {
+            return Err(anyhow::anyhow!(
+                "Edgegap API key is required. Set with --api-key or env var EDGEGAP_API_KEY"
+            ));
         }
+
         ctx.format = self.format;
         ctx.render_patches = self.render_patches.clone();
         ctx.pretty_redactions = self.pretty_redactions;
