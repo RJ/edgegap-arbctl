@@ -11,7 +11,7 @@ readme = "README.md"
 
 [dependencies]
 # use our local non-async generated edgegap client
-edgegap = {path = "./edgegap"}
+edgegap = {path = "./edgegap", version = "0.1.0"}
 enum_delegate = "0.2.0"
 clap = { version = "4.4", features = ["derive"] }
 serde     = { version = "1", features = ["derive"] }
