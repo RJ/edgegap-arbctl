@@ -1,5 +1,7 @@
 # Arbctl - An Edgegap API tool
 
+[![Crates.io](https://img.shields.io/crates/v/arbctl.svg)](https://crates.io/crates/arbctl)
+
 This is a tool for interacting with the Edgegap API.
 
 I've tried to build a scalable way to easily add api commands, but I plan to only really add enough functionality to be useful as part of my automated deployment pipeline. PRs welcome.
