@@ -1,8 +1,13 @@
 [package]
 name = "arbctl"
 authors = ["RJ <rj@metabrew.com>"]
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+description = "CLI tool for the Edgegap API, designed for use in automated deployment pipelines"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/RJ/edgegap-arbctl"
+keywords = ["cli", "clap", "rust", "edgegap", "gamedev"]
+readme = "README.md"
 
 [dependencies]
 # use our local non-async generated edgegap client
